@@ -11,7 +11,23 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d99f6b0-11c5-4a0e-a853-a24967897705" name="Default" comment="" />
+    <list default="true" id="1d99f6b0-11c5-4a0e-a853-a24967897705" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/leetcode.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/leetcode.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/leetcode.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/leetcode.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/leetcode.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/leetcode.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/leetcode.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/leetcode.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/leetcode.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/leetcode.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/leetcode.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/leetcode.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/towSum.cpp" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="85" selection-start-line="18" selection-start-column="85" selection-end-line="18" selection-end-column="85" />
+            <state relative-caret-position="250">
+              <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -49,18 +65,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="169">
               <caret line="1578" selection-start-line="1578" selection-end-line="1578" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="towSum.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/towSum.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="61" column="60" lean-forward="true" selection-start-line="48" selection-start-column="8" selection-end-line="61" selection-end-column="60" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -82,12 +86,16 @@
       <replace>std::runtime_error</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/addTwoNumbers.cpp" />
         <option value="$PROJECT_DIR$/towSum.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -101,10 +109,13 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="497" />
-    <option name="y" value="124" />
+    <option name="x" value="524" />
+    <option name="y" value="43" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -165,15 +176,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1531804632011</updated>
-      <workItem from="1531804633200" duration="4791000" />
+      <workItem from="1531804633200" duration="7559000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4791000" />
+    <option name="totallyTimeSpent" value="7559000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="497" y="124" width="1400" height="1000" extended-state="0" />
+    <frame x="524" y="43" width="1400" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2538071" />
@@ -182,11 +193,11 @@
       <window_info anchor="bottom" id="CMake" weight="0.32890365" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32890365" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32890365" />
+      <window_info anchor="bottom" id="Version Control" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" weight="0.32890365" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39977852" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39977852" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -204,20 +215,30 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>18</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="10" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-99" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/towSum.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/vector">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="1578" selection-start-line="1578" selection-end-line="1578" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/map">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
@@ -227,22 +248,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
+    <entry file="file://$PROJECT_DIR$/addTwoNumbers.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="85" selection-start-line="18" selection-start-column="85" selection-end-line="18" selection-end-column="85" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="11" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/towSum.cpp">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="61" column="60" lean-forward="true" selection-start-line="48" selection-start-column="8" selection-end-line="61" selection-end-column="60" />
+        <state relative-caret-position="250">
+          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
           <folding>
-            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
