@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/kuangjeon/CLionProjects/leetcode/main.cpp
+iostream
+-
+vector
+-
+towSum.cpp
+/Users/kuangjeon/CLionProjects/leetcode/towSum.cpp
+
+/Users/kuangjeon/CLionProjects/leetcode/towSum.cpp
+vector
+-
+map
+-
+stdexcept
+-
+
