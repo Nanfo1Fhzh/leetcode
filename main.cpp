@@ -15,11 +15,20 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
     ListNode *cl2 = l2;
     ListNode *rlt = NULL;
     ListNode *crlt = rlt;
+    int cflag = 0;
     if (cl1 && cl2) {
-        int 
-        while (cl1->next && cl2->next) {
+        while ((cl1 && cl1->next )|| (cl2 && cl2->next)) {
             ListNode *tmp = new ListNode(0);
-            tmp->val = (cl1->val + cl2->val > 9 ? (cl1->val + cl2->val - 10) : cl1->val + cl2->val);
+            int val1 = cl1 ? cl1->val : 0;
+            int val2 = cl2 ? cl2->val : 0;
+            int diff = cflag + val1 + val2 - 10;
+            if (diff >= 0) {
+                tmp->val = diff;
+                cflag = 1;
+            }else {
+                tmp->val = diff + 10;
+                cflag = 0;
+            }
             if (rlt) {
                 crlt->next = tmp;
                 crlt = tmp;
@@ -27,15 +36,98 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
                 rlt = tmp;
                 crlt = rlt;
             }
-            cl1 = cl1->next;
-            cl2 = cl2->next;
+            if (cl1) {
+                cl1 = cl1->next;
+            }
+            if (cl2) {
+                cl2 = cl2->next;
+            }
         }
-        ListNode *last = new ListNode(cl1->val + cl2->val > 9 ? (cl1->val + cl2->val - 10) : cl1->val + cl2->val);
-        crlt->next = last;
+        int val1 = cl1 ? cl1->val : 0;
+        int val2 = cl2 ? cl2->val : 0;
+        ListNode *last = new ListNode(0);
+        int diff = cflag + val1 + val2 - 10;
+        if (diff >= 0) {
+            last->val = diff;
+            cflag = 1;
+        }else {
+            last->val = diff + 10;
+            cflag = 0;
+        }
+        if (crlt) {
+            crlt->next = last;
+            crlt = last;
+        }else {
+            rlt = last;
+            crlt = rlt;
+        }
+        if (cflag > 0) {
+            ListNode *lastCflag = new ListNode(cflag);
+            crlt->next = lastCflag;
+        }
         return rlt;
     }else {
         throw new std::runtime_error("error with addTwoNumbers");
     }
+}
+
+ListNode* addTwoNumbers_solution(ListNode* l1, ListNode* l2) {
+    ListNode *dummyHead = new ListNode(0);
+    ListNode *p = l1, *q = l2, *curr = dummyHead;
+    int carry = 0;
+    while (p != NULL || q != NULL) {
+        int val1 = p ? p->val : 0;
+        int val2 = q ? q->val : 0;
+        int sum = carry + val1 + val2;
+        carry = sum / 10;
+        curr->next = new ListNode(sum % 10);
+        curr = curr->next;
+        if (p != NULL) p = p->next;
+        if (q != NULL) q = q->next;
+    }
+    if (carry > 0) {
+        curr->next = new ListNode(carry);
+    }
+    return dummyHead->next;
+}
+
+int caculate(ListNode* l1,ListNode* l2){
+
+    int add1 = 0,add2 = 0;
+    if(l1!=nullptr)
+        add1 = l1->val;
+    if(l2!=nullptr)
+        add2 = l2->val;
+
+    return add1 + add2;
+
+}
+
+ListNode* addTwoNumbers_faster(ListNode* l1, ListNode* l2) {
+
+    bool tCarry=0;//to store if current caculation results in carrying
+    ListNode* tNode=nullptr,*ansNode=nullptr;
+    while(l1!=nullptr||l2!=nullptr){
+        if(tNode!=nullptr)
+        {
+            tNode->next = new ListNode((caculate(l1, l2)+static_cast<int>(tCarry))%10);
+            tNode = tNode->next;
+        }
+        else
+            tNode = new ListNode((caculate(l1, l2)+static_cast<int>(tCarry))%10);
+        if(ansNode==nullptr)
+            ansNode = tNode;
+        tCarry=(caculate(l1, l2)+static_cast<int>(tCarry)>=10);
+        if(l1!=nullptr)
+            l1 = l1->next;
+        if(l2!=nullptr)
+            l2 = l2->next;
+    }
+
+    if(tCarry)
+        tNode->next = new ListNode((1));
+
+    return ansNode;
 }
 
 std::vector<int> twoSum(std::vector<int>& nums, int target) {
@@ -119,22 +211,34 @@ void exec_addTwoNumbers() {
 //    输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
 //    输出：7 -> 0 -> 8
 //    原因：342 + 465 = 807
-    ListNode *l3 = new ListNode(3);
-    ListNode *l2 = new ListNode(4);
-    ListNode *l1 = new ListNode(2);
-    l1->next = l2;
-    l2->next = l3;
+//    ListNode *l3 = new ListNode(1);
+//    ListNode *l2 = new ListNode(4);
+    ListNode *l1 = new ListNode(5);
+//    l1->next = l2;
+//    l2->next = l3;
 
-    ListNode *r3 = new ListNode(4);
-    ListNode *r2 = new ListNode(6);
+//    ListNode *r4 = new ListNode(9);
+//    ListNode *r3 = new ListNode(9);
+//    ListNode *r2 = new ListNode(5);
     ListNode *r1 = new ListNode(5);
-    r1->next = r2;
-    r2->next = r3;
+//    r1->next = r2;
+//    r2->next = r3;
+//    r3->next = r4;
     auto rlt = addTwoNumbers(l1,r1);
+//    auto rlt = addTwoNumbers(new ListNode(0),new ListNode(0));
+        auto  rlt1 = addTwoNumbers_solution(l1,r1);
+
     std::cout << rlt->val;
     while (rlt->next) {
         std::cout << " -> " << rlt->next->val;
         rlt = rlt->next;
+    }
+    std::cout << std::endl;
+
+    std::cout << rlt1->val;
+    while (rlt1->next) {
+        std::cout << " -> " << rlt1->next->val;
+        rlt1 = rlt1->next;
     }
     std::cout << std::endl;
 }
