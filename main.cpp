@@ -2,6 +2,7 @@
 #import <vector>
 #include <map>
 #import <stdexcept>
+#import <string>
 
 struct ListNode {
     int val;
@@ -189,7 +190,37 @@ std::vector<int> twoSum_1hashmap(std::vector<int>& nums, int target) {
     throw new std::runtime_error("No two sum solution");
 }
 
+int lengthOfLongestSubstring(std::string s) {
+    std::map<char, int> *map = new std::map<char, int>();
+    int max_len = 0;
+    int len = 0;
+    for (int i = 0; i < s.length(); ++i) {
+        char c = s.at(i);
+        auto find = map->find(c);
+        if (find != map->end()) {
+            max_len = max_len > len ? max_len : len;
+            len = i - find->second;
+            for (int j = 0; j <= find->second; ++j) {
+                char cc = s.at(j);
+                auto ifinder = map->find(cc);
+                if (ifinder->second <= find->second) {
+                    map->erase(cc);
+                }
+            }
+        } else {
+            ++len;
+        }
+        map->insert(std::pair<char, int>(c, i));
+    }
+    max_len = max_len > len ? max_len : len;
+    return max_len;
+}
+
 #pragma mark - exec
+void exec_lengthOfLongestSubstring() {
+    std::string *s = new std::string("abcabcbb");
+    lengthOfLongestSubstring(*s);
+}
 void exec_twoSum() {
     std::vector<int> nums;
     nums.push_back(3);
@@ -243,10 +274,12 @@ void exec_addTwoNumbers() {
     std::cout << std::endl;
 }
 
+
 #pragma mark - main
 int main(int argc, char const *argv[]) {
 //    exec_twoSum();
-    exec_addTwoNumbers();
+//    exec_addTwoNumbers();
+    exec_lengthOfLongestSubstring();
     return 0;
 }
 
