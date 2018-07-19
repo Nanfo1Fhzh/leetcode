@@ -192,33 +192,33 @@ std::vector<int> twoSum_1hashmap(std::vector<int>& nums, int target) {
 
 int lengthOfLongestSubstring(std::string s) {
     std::map<char, int> *map = new std::map<char, int>();
-    int max_len = 0;
-    int len = 0;
-    for (int i = 0; i < s.length(); ++i) {
-        char c = s.at(i);
-        auto find = map->find(c);
-        if (find != map->end()) {
-            max_len = max_len > len ? max_len : len;
-            len = i - find->second;
-            for (int j = 0; j <= find->second; ++j) {
-                char cc = s.at(j);
-                auto ifinder = map->find(cc);
-                if (ifinder->second <= find->second) {
-                    map->erase(cc);
-                }
-            }
-        } else {
-            ++len;
+    for (int i = 0, j = 0; j < s.length(); j++) {
+        if (map->find(s.at(j)) != map->end()) {
+            i = 0;
         }
-        map->insert(std::pair<char, int>(c, i));
     }
-    max_len = max_len > len ? max_len : len;
-    return max_len;
+    return 0;
+}
+
+int removeDuplicates(vector<int>& nums) {
+    if (nums.size() > 1) {
+        int i = 0;
+        while (i<nums.size()-1) {
+            auto next = nums.at(i+1);
+            if (next == nums.at(i)) {
+                nums.erase(nums.begin()+i+1);
+            }else {
+                ++i;
+            }
+        }
+
+    }
+    return nums.size();
 }
 
 #pragma mark - exec
 void exec_lengthOfLongestSubstring() {
-    std::string *s = new std::string("abcabcbb");
+    std::string *s = new std::string("dvdf");
     lengthOfLongestSubstring(*s);
 }
 void exec_twoSum() {
@@ -280,6 +280,13 @@ int main(int argc, char const *argv[]) {
 //    exec_twoSum();
 //    exec_addTwoNumbers();
     exec_lengthOfLongestSubstring();
+    std::vector<int > *v = new std::vector<int >();
+    v->push_back(1);
+    v->push_back(1);
+    v->push_back(1);
+    v->push_back(2);
+    v->push_back(2);
+    removeDuplicates(*v);
     return 0;
 }
 
