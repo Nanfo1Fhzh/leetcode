@@ -1,4 +1,4 @@
-# Install script for directory: /Users/kuangjeon/CLionProjects/leetcode
+# Install script for directory: /Users/kuangjeon/Documents/Projects/leetcode
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/kuangjeon/CLionProjects/leetcode/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/kuangjeon/Documents/Projects/leetcode/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

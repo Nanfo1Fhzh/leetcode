@@ -200,7 +200,7 @@ int lengthOfLongestSubstring(std::string s) {
     return 0;
 }
 
-int removeDuplicates(vector<int>& nums) {
+int removeDuplicates(std::vector<int>& nums) {
     if (nums.size() > 1) {
         int i = 0;
         while (i<nums.size()-1) {
@@ -274,6 +274,32 @@ void exec_addTwoNumbers() {
     std::cout << std::endl;
 }
 
+int maxProfit(std::vector<int>& prices) {
+    int cnt = prices.size();
+    int idx = 0;
+    int benefit = 0;
+    int curr_buy_price = 0;
+    int curr_sale_price = 0;
+    bool lock = false;
+    if (cnt < 2) {
+        return 0;
+    }
+    while (idx <= cnt - 1) {
+        if (lock == false && idx < cnt - 1 && prices.at(idx) < prices.at(idx + 1)) {
+            curr_buy_price = prices.at(idx);
+            lock = true;
+        }else if(lock == true && (idx == cnt - 1 || prices.at(idx) > prices.at(idx + 1))) {
+            curr_sale_price = prices.at(idx);
+            benefit += curr_sale_price - curr_buy_price;
+            curr_sale_price = 0;
+            curr_buy_price = 0;
+            lock = false;
+        }
+        ++idx;
+    }
+    return benefit;
+}
+
 
 #pragma mark - main
 int main(int argc, char const *argv[]) {
@@ -282,11 +308,12 @@ int main(int argc, char const *argv[]) {
     exec_lengthOfLongestSubstring();
     std::vector<int > *v = new std::vector<int >();
     v->push_back(1);
-    v->push_back(1);
-    v->push_back(1);
     v->push_back(2);
-    v->push_back(2);
+    v->push_back(3);
+    v->push_back(4);
+    v->push_back(5);
     removeDuplicates(*v);
+    maxProfit(*v);
     return 0;
 }
 
