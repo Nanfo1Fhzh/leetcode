@@ -300,6 +300,24 @@ int maxProfit(std::vector<int>& prices) {
     return benefit;
 }
 
+void rotate(std::vector<int>& nums, int k) {
+    int cnt = nums.size();
+    int real_k = k % nums.size();
+    if (real_k == 0) {
+        return;
+    }
+    int *buffers = new int[real_k]();
+    for (int l = 0; l < real_k; l++) {
+        buffers[l] = nums.at(cnt-1-(real_k-1-l));
+    }
+    for (int i=cnt-1; i>=0; i--) {
+        if (i <= cnt-1 && i > real_k-1) {
+            nums.at(i) = nums.at(i-real_k);
+        }else{
+            nums.at(i) = buffers[i];
+        }
+    }
+}
 
 #pragma mark - main
 int main(int argc, char const *argv[]) {
@@ -312,8 +330,12 @@ int main(int argc, char const *argv[]) {
     v->push_back(3);
     v->push_back(4);
     v->push_back(5);
-    removeDuplicates(*v);
-    maxProfit(*v);
+    v->push_back(6);
+    v->push_back(7);
+
+//    removeDuplicates(*v);
+//    maxProfit(*v);
+    rotate(*v, 3);
     return 0;
 }
 
