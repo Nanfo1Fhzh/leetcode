@@ -319,25 +319,101 @@ void rotate(std::vector<int>& nums, int k) {
     }
 }
 
+int singleNumber(std::vector<int>& nums) {
+    if (nums.size() == 1) {
+        return nums.at(0);
+    }
+    for (int i=0;i<nums.size();i++) {
+        for (int j = i + 1; j < nums.size(); j++) {
+            if (nums.at(i) > nums.at(j)) {
+                int tmp = nums.at(i);
+                nums.at(i) = nums.at(j);
+                nums.at(j) = tmp;
+            }
+        }
+    }
+
+    for (int i=0;i<nums.size();i++) {
+        std::cout << nums.at(i) << " ";
+    }
+
+    for (int i=0;i<nums.size();i++) {
+        if (i > 0 && i < nums.size()-1) {
+            if ((nums.at(i) ^ nums.at(i-1) != 0) && (nums.at(i) ^ nums.at(i+1) != 0)) {
+                return nums.at(i);
+            }
+        }else if (i == 0 && (nums.at(i) ^ nums.at(i+1) != 0) && (nums.at(i+1) ^ nums.at(i+2) == 0)){
+            return nums.at(i);
+        }else if (i == nums.size()-1 && (nums.at(i) ^ nums.at(i-1) != 0) && (nums.at(i-1) ^ nums.at(i-2) == 0)){
+            return nums.at(i);
+        }
+    }
+}
+
+bool containsDuplicate(std::vector<int>& nums) {
+    if (nums.size()<2) {
+        return false;
+    }
+    std::map<int, int> *v = new std::map<int,int>();
+    for (int i=0;i<nums.size(); i++) {
+        if (v->find(nums.at(i)) != v->end()) {
+            return true;
+        }else {
+            v->insert(std::pair<int,int>(nums.at(i),i));
+        }
+    }
+    return false;
+}
+/**-1 will be returned if not match any memeber*/
+int indexOfnumInVector(int num, std::vector<int>& nums) {
+    int idx = -1;
+    for (int i=0;i<nums.size();i++) {
+        if (nums.at(i) == num) {
+            return i;
+        }
+    }
+    return idx;
+}
+
+std::vector<int> intersect(std::vector<int>& nums1, std::vector<int>& nums2) {
+    std::vector<int> smallerNums = (nums1.size() > nums2.size()) ? nums2 : nums1;
+    std::vector<int> biggerNums = (nums1 == smallerNums) ? nums2 : nums1;
+    std::vector<int> intersectVector;
+    for (int i=0;i<smallerNums.size();i++) {
+        int idx = indexOfnumInVector(smallerNums.at(i),biggerNums);
+        if (idx!=-1) {
+            intersectVector.push_back(smallerNums.at(i));
+            biggerNums.erase(biggerNums.begin()+idx);
+            smallerNums.erase(smallerNums.begin()+i);
+            --i;
+        }
+    }
+    return intersectVector;
+}
+
+
+
 #pragma mark - main
 int main(int argc, char const *argv[]) {
 //    exec_twoSum();
 //    exec_addTwoNumbers();
     exec_lengthOfLongestSubstring();
     std::vector<int > *v = new std::vector<int >();
-    v->push_back(1);
     v->push_back(2);
-    v->push_back(3);
+    v->push_back(1);
     v->push_back(4);
     v->push_back(5);
+    v->push_back(2);
     v->push_back(6);
     v->push_back(7);
-
+    int result = singleNumber(*v);
 //    removeDuplicates(*v);
 //    maxProfit(*v);
-    rotate(*v, 3);
+//    rotate(*v, 3);
     return 0;
 }
+
+
 
 
 
