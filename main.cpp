@@ -19,6 +19,14 @@ void print_vector(std::vector<int>& v) {
     std::cout<<std::endl;
 }
 
+void print_vector_char(std::vector<char>& v) {
+    std::cout<<std::endl;
+    for (int i = 0; i <v.size() ; i++) {
+        std::cout<<v[i]<<" ";
+    }
+    std::cout<<std::endl;
+}
+
 #pragma mark - impl
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
     ListNode *cl1 = l1;
@@ -544,6 +552,103 @@ void moveZeroes_f(std::vector<int>& nums) {
         nums[i]=0;
     }
 }
+//[
+//        [".",".",".",".","5",".",".","1","."],
+//        [".","4",".","3",".",".",".",".","."],
+//        [".",".",".",".",".","3",".",".","1"],
+//        ["8",".",".",".",".",".",".","2","."],
+//        [".",".","2",".","7",".",".",".","."],
+//        [".","1","5",".",".",".",".",".","."],
+//        [".",".",".",".",".","2",".",".","."],
+//        [".","2",".","9",".",".",".",".","."],
+//        [".",".","4",".",".",".",".",".","."]
+//]
+/**
+ * //位图法
+            //维护三个数组：行，列、宫
+            for(int i=0; i<9; i++){
+                int[] row = new int[9];
+                int[] col = new int[9];
+                int[] cube = new int[9];
+
+                for (int j=0; j<9; j++){
+                    if(board[i][j]!='.'){
+                        if(row[board[i][j] - '1'] ==1){
+                            return false;
+                        }else {
+                            row[board[i][j] - '1'] =1;
+                        }
+                    }
+                    if(board[j][i] != '.'){
+                        if(col[board[j][i] - '1'] == 1){
+                            return false;
+                        }else{
+                            col[board[j][i] - '1'] = 1;
+                        }
+                    }
+                    //每一宫内行列的变换
+                    int cubeX = 3 * (i/3) + j/3;
+                    int cubeY = 3 * (i%3) + j%3;
+                    if(board[cubeX][cubeY]!='.'){
+                        if  (cube[board[cubeX][cubeY] - '1'] == 1){
+                            return false;
+                        }else{
+                            cube[board[cubeX][cubeY] - '1'] = 1;
+                        }
+                    }
+                }
+            }
+            return true;
+ * */
+
+bool vectorContainsDuplicatesIgnoreDotChar(std::vector<char>& v) {
+    std::unordered_map<char, int> map;
+    for (int j = 0; j < v.size(); ++j) {
+        if (v[j] != '.' && map.find(v[j]) != map.end()) {
+            return true;
+        }
+        if (v[j] != '.') map[v[j]] = j;
+    }
+    return false;
+}
+
+bool isValidSudoku(std::vector<std::vector<char> >& board) {
+
+    // row check;
+    bool rowValid = true;
+    for (int i = 0; i < 9; ++i) {
+        rowValid &= !vectorContainsDuplicatesIgnoreDotChar(board[i]);
+    }
+    if (!rowValid) return false;
+
+    // column check
+    bool columnValid = true;
+    for (int j = 0; j < 9; j++) {
+        std::vector<char> columnV;
+        for (int i = 0; i < 9; i++) {
+            columnV.push_back(board[i][j]);
+        }
+        columnValid &= !vectorContainsDuplicatesIgnoreDotChar(columnV);
+        if (!columnValid) return false;
+    }
+
+    // Sudoku check
+    bool sudokuValid = true;
+    for (int k = 0; k < 3; k++) { // row
+        for (int i = 0; i < 3; i++) { // column
+            std::vector<char> sudokuV;
+            for (int j = 3*k; j < 3*(k+1); j++) {
+                for (int l = 3*i; l < 3*(i+1); l++) {
+                    sudokuV.push_back(board[j][l]);
+                }
+            }
+            print_vector_char(sudokuV);
+            sudokuValid &= !vectorContainsDuplicatesIgnoreDotChar(sudokuV);
+            if (!sudokuValid) return false;
+        }
+    }
+    return true;
+}
 
 
 
@@ -567,6 +672,8 @@ int main(int argc, char const *argv[]) {
 //    rotate(*v, 3);
     return 0;
 }
+
+
 
 
 
