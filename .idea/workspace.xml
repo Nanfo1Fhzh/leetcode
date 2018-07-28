@@ -12,6 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d99f6b0-11c5-4a0e-a853-a24967897705" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/leetcode.dir/main.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -37,8 +38,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="444" column="37" lean-forward="true" selection-start-line="444" selection-start-column="37" selection-end-line="444" selection-end-column="37" />
+            <state relative-caret-position="595">
+              <caret line="546" column="5" lean-forward="true" selection-start-line="526" selection-start-column="3" selection-end-line="546" selection-end-column="5" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -106,7 +107,7 @@
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
     <option name="x" value="851" />
-    <option name="y" value="250" />
+    <option name="y" value="249" />
     <option name="width" value="1955" />
     <option name="height" value="1389" />
   </component>
@@ -177,12 +178,12 @@
       <workItem from="1532250869196" duration="762000" />
       <workItem from="1532252317125" duration="624000" />
       <workItem from="1532253166339" duration="6750000" />
-      <workItem from="1532755038272" duration="2974000" />
+      <workItem from="1532755038272" duration="5970000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31509000" />
+    <option name="totallyTimeSpent" value="34505000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -194,21 +195,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="851" y="250" width="1955" height="1389" extended-state="0" />
+    <frame x="851" y="249" width="1955" height="1389" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16752844" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49731904" weight="0.32964602" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.48810756" weight="0.22910216" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.48655635" weight="0.22910216" />
       <window_info anchor="bottom" id="CMake" order="7" sideWeight="0.49463806" weight="0.32853982" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5124095" side_tool="true" visible="true" weight="0.4125387" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5144778" side_tool="true" visible="true" weight="0.4125387" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49463806" weight="0.32964602" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49463806" weight="0.33738938" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49463806" weight="0.32853982" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49431232" weight="0.32817337" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4875905" visible="true" weight="0.4125387" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.48552224" visible="true" weight="0.4125387" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -225,7 +226,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="52" />
+      <option name="time" value="57" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -362,8 +363,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="444" column="37" lean-forward="true" selection-start-line="444" selection-start-column="37" selection-end-line="444" selection-end-column="37" />
+        <state relative-caret-position="595">
+          <caret line="546" column="5" lean-forward="true" selection-start-line="526" selection-start-column="3" selection-end-line="546" selection-end-column="5" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

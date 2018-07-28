@@ -11,6 +11,14 @@ struct ListNode {
     ListNode(int x) : val(x), next(NULL) {}
 };
 
+void print_vector(std::vector<int>& v) {
+    std::cout<<std::endl;
+    for (int i = 0; i <v.size() ; i++) {
+        std::cout<<v[i]<<" ";
+    }
+    std::cout<<std::endl;
+}
+
 #pragma mark - impl
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
     ListNode *cl1 = l1;
@@ -436,6 +444,27 @@ std::vector<int> intersect_use_unordered_map_plain(std::vector<int>& nums1, std:
     return result;
 }
 
+std::vector<int> plusOne(std::vector<int>& digits) {
+    int carry = 0;
+    std::vector<int> res = digits;
+    for (int i=res.size()-1; i>=0; i--) {
+        int sum = carry+res[i] + ((i==res.size()-1) ? 1 : 0);
+        carry = 0;
+        if (sum > 9) {
+            carry = 1;
+            res[i] = sum % 10;
+        }else {
+            ++res[i];
+            return res;
+        }
+    }
+
+    if (carry > 0) {
+        res.insert(res.begin(),1);
+    }
+    return res;
+}
+
 int singleNumber(std::vector<int>& nums) {
     if (nums.size() == 1) {
         return nums.at(0);
@@ -474,6 +503,49 @@ int fast_singleNumber(std::vector<int>& nums) {
     return res;
 }
 
+void moveZeroes(std::vector<int>& nums) {
+    int cnt = nums.size();
+    if (cnt == 0) {
+        return;
+    }
+    int zCnt = 0;
+    for (int i=cnt-1;i>=0;i--) {
+        if (nums[i] == 0) {
+            nums.erase(nums.begin()+i);
+            ++zCnt;
+        }
+    }
+    if (zCnt == 0) {
+        return;
+    }
+    for (int j=0;j<zCnt;j++) {
+        nums.push_back(0);
+    }
+}
+
+void moveZeroes_f(std::vector<int>& nums) {
+    int pos=0,count=0,i=0;
+    while(i<nums.size() && nums[i]!=0){
+        pos++;
+        i++;
+        count++;
+    }
+    //从第一个0开始 往后寻找非0数值依次覆盖pos
+    for(;i<nums.size();i++){
+        if(nums[i]!=0){
+            if(pos<i){
+                nums[pos]=nums[i];
+                count++;
+                pos++;
+            }
+        }
+    }
+    for(int i=count;i<nums.size();i++){
+        nums[i]=0;
+    }
+}
+
+
 
 #pragma mark - main
 int main(int argc, char const *argv[]) {
@@ -481,13 +553,14 @@ int main(int argc, char const *argv[]) {
 //    exec_addTwoNumbers();
     exec_lengthOfLongestSubstring();
     std::vector<int > *v = new std::vector<int >();
-    v->push_back(2);
     v->push_back(1);
-    v->push_back(4);
-    v->push_back(5);
+    v->push_back(0);
     v->push_back(2);
-    v->push_back(6);
-    v->push_back(7);
+    v->push_back(0);
+    v->push_back(3);
+    v->push_back(4);
+    v->push_back(0);
+    moveZeroes_f(*v);
     int result = singleNumber(*v);
 //    removeDuplicates(*v);
 //    maxProfit(*v);
