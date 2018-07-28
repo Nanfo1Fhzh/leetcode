@@ -361,6 +361,34 @@ std::vector<int> intersect(std::vector<int>& nums1, std::vector<int>& nums2) {
     return intersectVector;
 }
 
+std::vector<int> intersect_use_map(std::vector<int>& nums1, std::vector<int>& nums2) {
+    std::map<int, int> *map = new std::map<int, int>();
+    std::vector<int> smallerNums = (nums1.size() > nums2.size()) ? nums2 : nums1;
+    std::vector<int> biggerNums = (nums1 == smallerNums) ? nums2 : nums1;
+    std::vector<int> res;
+    // 把biggerVector加入value和次数映射到map中
+    for (int i = 0; i < biggerNums.size(); i++) {
+        if (map->find(biggerNums.at(i)) != map->end()) {
+            int newCnt = map->at(biggerNums.at(i)) + 1;
+            map->erase(biggerNums.at(i));
+            map->insert(std::pair<int, int>(biggerNums.at(i),newCnt));
+        }else {
+            map->insert(std::pair<int, int>(biggerNums.at(i),1));
+        }
+    }
+
+    for (int j = 0; j < smallerNums.size(); j++) {
+        auto t = map->find(smallerNums.at(j));
+        if (t != map->end() && t->second > 0) {
+            res.push_back(smallerNums.at(j));
+            int newCnt = t->second - 1;
+            map->erase(smallerNums.at(j));
+            map->insert(std::pair<int, int>(t->first, newCnt));
+        }
+    }
+    return res;
+}
+
 
 int singleNumber(std::vector<int>& nums) {
     if (nums.size() == 1) {
