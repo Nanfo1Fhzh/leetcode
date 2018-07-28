@@ -104,11 +104,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="67" />
     <option name="y" value="37" />
-    <option name="width" value="1513" />
-    <option name="height" value="999" />
+    <option name="width" value="1955" />
+    <option name="height" value="1389" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -165,19 +165,12 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.leetcode">
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="leetcode" RUN_TARGET_NAME="leetcode" EXPLICIT_BUILD_TARGET_NAME="all">
-      <envs />
-    </configuration>
-    <configuration name="leetcode" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="leetcode" TARGET_NAME="leetcode" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="leetcode" RUN_TARGET_NAME="leetcode">
-      <envs />
-    </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
-      <item index="1" class="java.lang.String" itemvalue="Application.leetcode" />
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="leetcode" RUN_TARGET_NAME="leetcode" EXPLICIT_BUILD_TARGET_NAME="all" />
+    <configuration name="leetcode" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="leetcode" TARGET_NAME="leetcode" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="leetcode" RUN_TARGET_NAME="leetcode" />
+    <list>
+      <item itemvalue="Application.Build All" />
+      <item itemvalue="Application.leetcode" />
     </list>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />

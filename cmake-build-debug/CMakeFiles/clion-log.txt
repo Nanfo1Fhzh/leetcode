@@ -1,4 +1,4 @@
-/usr/local/bin/cmake -DCMAKE_BUILD_TYPE=Debug -Wc++11-extensions -G "CodeBlocks - Unix Makefiles" /Users/kuangjeon/Documents/Projects/leetcode
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -Wc++11-extensions -G "CodeBlocks - Unix Makefiles" /Users/kuangjeon/CLionProjects/leetcode
 -- The C compiler identification is AppleClang 9.1.0.9020039
 -- The CXX compiler identification is AppleClang 9.1.0.9020039
 -- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/kuangjeon/Documents/Projects/leetcode/cmake-build-debug
+-- Build files have been written to: /Users/kuangjeon/CLionProjects/leetcode/cmake-build-debug

@@ -319,36 +319,6 @@ void rotate(std::vector<int>& nums, int k) {
     }
 }
 
-int singleNumber(std::vector<int>& nums) {
-    if (nums.size() == 1) {
-        return nums.at(0);
-    }
-    for (int i=0;i<nums.size();i++) {
-        for (int j = i + 1; j < nums.size(); j++) {
-            if (nums.at(i) > nums.at(j)) {
-                int tmp = nums.at(i);
-                nums.at(i) = nums.at(j);
-                nums.at(j) = tmp;
-            }
-        }
-    }
-
-    for (int i=0;i<nums.size();i++) {
-        std::cout << nums.at(i) << " ";
-    }
-
-    for (int i=0;i<nums.size();i++) {
-        if (i > 0 && i < nums.size()-1) {
-            if ((nums.at(i) ^ nums.at(i-1) != 0) && (nums.at(i) ^ nums.at(i+1) != 0)) {
-                return nums.at(i);
-            }
-        }else if (i == 0 && (nums.at(i) ^ nums.at(i+1) != 0) && (nums.at(i+1) ^ nums.at(i+2) == 0)){
-            return nums.at(i);
-        }else if (i == nums.size()-1 && (nums.at(i) ^ nums.at(i-1) != 0) && (nums.at(i-1) ^ nums.at(i-2) == 0)){
-            return nums.at(i);
-        }
-    }
-}
 
 bool containsDuplicate(std::vector<int>& nums) {
     if (nums.size()<2) {
@@ -391,6 +361,44 @@ std::vector<int> intersect(std::vector<int>& nums1, std::vector<int>& nums2) {
     return intersectVector;
 }
 
+
+int singleNumber(std::vector<int>& nums) {
+    if (nums.size() == 1) {
+        return nums.at(0);
+    }
+    int len = nums.size();
+    for (int i=0;i<len-1;i++) {
+        for (int j=0;j<len-i-1;j++) {
+            if (nums.at(j)>nums.at(j+1)) {
+                int tmp = nums.at(j);
+                nums.at(j) = nums.at(j+1);
+                nums.at(j+1) = tmp;
+            }
+        }
+    }
+
+    for (int i=0;i<len;i++) {
+        if (i > 0 && i < len-1) {
+            if (((nums.at(i)^nums.at(i-1)) != 0 ) && ((nums.at(i)^nums.at(i+1)) !=0 )) {
+                return nums.at(i);
+            }
+        }else if (i==0 && ((nums.at(0)^nums.at(1)) != 0) && ((nums.at(1)^nums.at(2)) == 0)){
+            return nums.at(0);
+        }else if (i==len-1 && ((nums.at(len-1)^nums.at(len-2)) != 0 ) && (nums.at(len-2)^nums.at(len-3)==0)){
+            return nums.at(len-1);
+        }
+    }
+}
+
+
+int fast_singleNumber(std::vector<int>& nums) {
+    int res = nums[0];
+    for(int i=1; i<nums.size();i++)
+    {
+        res = res ^ nums[i];
+    }
+    return res;
+}
 
 
 #pragma mark - main
